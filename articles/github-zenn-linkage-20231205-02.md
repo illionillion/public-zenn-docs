@@ -6,6 +6,8 @@ topics: ["GitHub", "Git"]
 published: true
 ---
 
+![](https://storage.googleapis.com/zenn-user-upload/b7dc2208de01-20231205.png)
+
 # 始めたきっかけ
 
 大した理由ではなくて、高校の卒業式の時に彼女に振られた・進路がうまく決まらなかったなどの出来事があり、かなり落ち込んでいたので、そこから立ち直るためのアクションとして始めました。
@@ -37,6 +39,8 @@ published: true
 ## 自己肯定感が上がる
 
 コミットするごとに緑が埋まっていくので、それを眺めているととても自己肯定感が上がってモチベーションになります。
+
+![](https://storage.googleapis.com/zenn-user-upload/3ad942ae1e4b-20231205.png)
 
 # さいごに
 
