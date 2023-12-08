@@ -168,3 +168,12 @@ show tables; # テーブル一覧を表示
 これで`contact_table`のテーブルが表示されればうまくデータベースは動いています。
 
 ![](https://storage.googleapis.com/zenn-user-upload/f954915461ce-20231208.png)
+
+次に使用するライブラリのインストールをします。
+
+```sh
+docker exec -it ap sh # コンテナの中に入る
+npm i framer-motion mysql2
+npm i -D @chakra-ui/react @emotion/react @emotion/styled @types/mysql
+exit # インストールできたらコンテナから出る
+```
