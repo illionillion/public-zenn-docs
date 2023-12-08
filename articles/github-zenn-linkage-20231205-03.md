@@ -16,7 +16,7 @@ Next.js 13でリリースされたAppRouterを活用してお問い合わせフ�
 
 - Next.js（AppRouter）
 - TypeScript
-- Yamada UI
+- Chakra UI
 - MySQL
 - Docker
 
@@ -159,10 +159,13 @@ docker compose up -d
 データベースの確認は以下のコマンドでできます。
 
 ```sh
-docker exec -it db bash # コンテナの中に入る
+docker exec -it db sh # コンテナの中に入る
 mysql -u root -p # DBにログイン
 use contactform; # データベースを選択
 show tables; # テーブル一覧を表示
+
+exit # 表示できたらSQLを終了
+exit # コンテナからも出る
 ```
 
 これで`contact_table`のテーブルが表示されればうまくデータベースは動いています。
