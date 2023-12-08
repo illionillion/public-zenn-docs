@@ -367,3 +367,5 @@ select * from contact_table;
 ```
 
 送信したデータが存在すればこれで完成です。
+
+![](https://storage.googleapis.com/zenn-user-upload/dabebf15d6c8-20231208.png)
