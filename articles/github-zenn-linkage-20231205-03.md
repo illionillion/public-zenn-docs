@@ -166,3 +166,5 @@ show tables; # テーブル一覧を表示
 ```
 
 これで`contact_table`のテーブルが表示されればうまくデータベースは動いています。
+
+![](https://storage.googleapis.com/zenn-user-upload/f954915461ce-20231208.png)
