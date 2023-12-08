@@ -3,7 +3,7 @@ title: "【Next.js】AppRouterでお問い合わせフォームを作ってみ�
 emoji: "🐥"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Nextjs", "AppRouter", "TypeScript", "Docker", "React"]
-published: false
+published: true
 ---
 
 # はじめに
@@ -369,3 +369,92 @@ select * from contact_table;
 送信したデータが存在すればこれで完成です。
 
 ![](https://storage.googleapis.com/zenn-user-upload/dabebf15d6c8-20231208.png)
+
+# 一覧表示画面
+
+`/app/contents/page.tsx`を以下のように作成
+
+```tsx
+"use client"
+import {useState, useEffect} from "react"
+import {Center, Heading, Table, Thead, Tbody, Tr, Th ,Td} from "@chakra-ui/react"
+
+export interface responceData {
+    id: number
+    name: string
+    email: string
+    content_question: string
+    postdate: string
+}
+const Page = () => {
+
+    const [contents, setContents] = useState<responceData[]>([])
+    const initFetch = async () => {
+        const response = await fetch("/api/contents")
+        const data = await response.json()
+        setContents(data.contents)
+    }
+
+    useEffect(() => {
+        initFetch()
+    },[])
+    
+    return <Center w="full" flexDirection="column">
+        <Heading py={5}>お問合せ一覧</Heading>
+        <Table>
+            <Thead>
+                <Tr>
+                    <Th>No.</Th>
+                    <Th>名前</Th>
+                    <Th>メール</Th>
+                    <Th>内容</Th>
+                    <Th>時間</Th>
+                </Tr>
+            </Thead>
+            <Tbody>
+                {contents.map((item, index) => (
+                    <Tr key={index}>
+                        <Td>{item.id}</Td>
+                        <Td>{item.name}</Td>
+                        <Td>{item.email}</Td>
+                        <Td>{item.content_question}</Td>
+                        <Td>{item.postdate}</Td>
+                    </Tr>
+                ))}
+            </Tbody>
+        </Table>
+    </Center>
+}
+
+export default Page
+```
+
+# 一覧取得API
+
+`/app/api/contents/route.ts`を以下のように作成
+
+```ts
+import mysql_connection from "@/lib/db/connection";
+
+export async function GET() {
+  try {
+    const connection = await mysql_connection();
+    const result = await connection.query("SELECT * from contact_table");
+    connection.end();
+    return new Response(
+      JSON.stringify({ message: "取得に成功しました。", contents: result[0] }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  } catch (error) {
+    return new Response(JSON.stringify({ message: "取得に失敗しました。" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+}
+```
+
+これで`localhost:3000/content`に行けば一覧表示画面、`localhost:3000/api/contents`に行けば一覧結果が表示されます。
