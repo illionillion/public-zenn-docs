@@ -120,7 +120,7 @@ default-character-set = utf8mb4
 
 `.env`
 
-```
+```env
 MYSQL_HOST=mysql
 MYSQL_USER=root
 MYSQL_PORT=3306
