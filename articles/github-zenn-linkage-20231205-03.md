@@ -460,3 +460,4 @@ export async function GET() {
 これで`localhost:3000/content`に行けば一覧表示画面、`localhost:3000/api/contents`に行けば一覧結果が表示されます。
 
 [リポジトリのURL](https://github.com/illionillion/approuter-contactform)
+cloneしてお試しください。
