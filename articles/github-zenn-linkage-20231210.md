@@ -26,6 +26,18 @@ https://developer.mozilla.org/ja/docs/Web/API/Web_NFC_API
 アプリ：https://illionillion.github.io/react-read-nfc-app/read
 リポジトリ：https://github.com/illionillion/react-read-nfc-app
 
+書き込み機能
+![](https://storage.googleapis.com/zenn-user-upload/2a87ab36b486-20231215.jpg)
+
+読み込み機能
+![](https://storage.googleapis.com/zenn-user-upload/054b5eac187c-20231215.jpg)
+
+- テキスト
+- URL
+- JSON
+
+でのデータの読み書きが可能です。
+
 # 使用技術
 
 - React
