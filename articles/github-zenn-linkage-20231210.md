@@ -36,7 +36,8 @@ https://developer.mozilla.org/ja/docs/Web/API/Web_NFC_API
 - URL
 - JSON
 
-でのデータの読み書きが可能です。
+でのデータの読み書きが可能ですが、Android端末での一部のブラウザでしか動作しません。
+https://developer.mozilla.org/ja/docs/Web/API/Web_NFC_API
 
 # 使用技術
 
@@ -52,3 +53,11 @@ Reactで書いているので見た目は大分違いますが、読み書きの
 
 https://zenn.dev/ktpi2000/articles/webnfc-playground
 
+# まとめ
+
+- ブラウザでNFCの読み書きができる（テキスト・URL・JSONなど）
+- 画像などのバイナリはbase64に変換してもNFCの容量的に書き込み不可
+- 使える端末やブラウザに制限がある
+- 交通系ICなどは対応しておらず、あくまで市販のNFCのみ対応
+- 開発環境で `https://` が使える環境でないといけない（今回はViteでSSL化）
+- 実際にNFCを操作するならネイティブアプリで実装した方が良い
