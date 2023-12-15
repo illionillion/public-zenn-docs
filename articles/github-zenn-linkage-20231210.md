@@ -48,3 +48,7 @@ https://developer.mozilla.org/ja/docs/Web/API/Web_NFC_API
 
 # 実装のメイン部分
 
+Reactで書いているので見た目は大分違いますが、読み書きの部分はここなどを参考にしました。
+
+https://zenn.dev/ktpi2000/articles/webnfc-playground
+
