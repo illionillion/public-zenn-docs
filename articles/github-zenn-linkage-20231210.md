@@ -27,10 +27,10 @@ https://developer.mozilla.org/ja/docs/Web/API/Web_NFC_API
 リポジトリ：https://github.com/illionillion/react-read-nfc-app
 
 書き込み機能
-![](https://storage.googleapis.com/zenn-user-upload/2a87ab36b486-20231215.jpg)
+![書き込み機能](https://storage.googleapis.com/zenn-user-upload/2a87ab36b486-20231215.jpg =300x)
 
 読み込み機能
-![](https://storage.googleapis.com/zenn-user-upload/054b5eac187c-20231215.jpg)
+![読み込み機能](https://storage.googleapis.com/zenn-user-upload/054b5eac187c-20231215.jpg =300x)
 
 - テキスト
 - URL
