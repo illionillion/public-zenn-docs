@@ -21,3 +21,18 @@ https://developer.mozilla.org/ja/docs/Web/API/Web_NFC_API
 
 # 開発したアプリについて
 
+リンクは以下になります。
+
+アプリ：https://illionillion.github.io/react-read-nfc-app/read
+リポジトリ：https://github.com/illionillion/react-read-nfc-app
+
+# 使用技術
+
+- React
+- TypeScript
+- Chakra UI
+- GitHub Actions
+- PWA
+
+# 実装のメイン部分
+
