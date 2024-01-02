@@ -1,10 +1,12 @@
 ---
-title: "Express × LINE botをVercelでデプロイ"
+title: "Expressで作ったLINE BotをVercelでデプロイする方法"
 emoji: "🤖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Express", "Vercel", "LINE", "TypeScript"]
 published: true
 ---
+
+Expressで作ったLINE BotをVercelでデプロイする方法を紹介します。
 
 # 事前準備
 
