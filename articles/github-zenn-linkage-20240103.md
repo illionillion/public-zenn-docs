@@ -6,4 +6,4 @@ topics: ["React", "TypeScript", "YamadaUI", "NextJS", "Vite"]
 published: false
 ---
 
-2023年12月24日にリリースされたYamada UIについて
+2023年12月24日にリリースされた[Yamada UI](https://github.com/hirotomoyamada/yamada-ui)について
