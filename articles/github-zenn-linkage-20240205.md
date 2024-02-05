@@ -44,7 +44,7 @@ describe("HelloAPIのテスト", () => {
 
 `POST`やパラメータを渡して送信する際はこう
 
-```ts
+```ts:/src/app/api/send/route.ts
 import * as appHandler from "@/app/api/send/route";
 import { testApiHandler } from 'next-test-api-route-handler'; 
 
