@@ -6,7 +6,7 @@ topics: ["YamadaUI", "ChakraUI", "React", "TypeScript", "UI"]
 published: true
 ---
 
-# なぜYamada UIを進めるのか
+# なぜYamada UIを勧めるのか
 
 自分は以前まではChakra UIをよく使っていました。
 
