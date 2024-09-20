@@ -3,7 +3,7 @@ title: "GitHubを1000日間毎日更新し続けた話"
 emoji: "😇"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["GitHub", "Git"]
-published: true
+published: false
 ---
 
 ![](https://storage.googleapis.com/zenn-user-upload/b7dc2208de01-20231205.png)
