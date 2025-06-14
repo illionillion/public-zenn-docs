@@ -107,9 +107,6 @@ https://www.npmjs.com/package/rollup-plugin-visualizer
 
 これで実際にツリーシェイキングがどのように作用するかを理解できたと思います。
 
-<!-- ![ツリーシェイキングが効かなかった場合](https://storage.googleapis.com/zenn-user-upload/1660197b1025-20250614.png) -->
-
-
 # ツリーシェイキングが効くための前提条件
 
 そんなツリーシェイキングですが、これが効くのには条件があります。
@@ -202,12 +199,87 @@ export function componentC() {
 
 :::
 
-# 効かない時1：全部同じファイル内にある時
+# 前提条件を満たしていてもツリーシェイキングが効かない場合
 
-# 効かない時2: `*`でまとめてエクスポートされてる時
+これらの条件を満たしていてもツリーシェイキングが効かない場合があります。
 
-# 効かない時3: 副作用が効いている時
+![ツリーシェイキングが効かなかった場合](https://storage.googleapis.com/zenn-user-upload/1660197b1025-20250614.png)
+
+## 効かない時1：全部同じファイル内にある時
+
+1つのファイル内で複数の関数やコンポーネントを定義し、まとめてexportしている場合、バンドルツールによっては未使用のものもバンドルに含まれてしまうことがあります。特にデフォルトエクスポートや、export文がファイル末尾にまとめて書かれている場合は注意が必要です。
+
+```tsx
+// index.tsx にA/B/Cすべて定義されている例
+// AとBのみをimportしていてもCは含まれてしまう
+
+export const ComponentA = () => {
+  return <div>コンポーネントA</div>;
+};
+
+export const ComponentB = () => {
+  return <div>コンポーネントB</div>;
+};
+
+export const ComponentC = () => {
+  return <div>コンポーネントC</div>;
+};
+```
+
+このように1ファイルにまとめて定義・exportしている場合、たとえComponentCを使っていなくても、バンドルツールによってはCもバンドルに含まれてしまうことがあります。
+
+## 効かない時2: `export default`でまとめてエクスポートしている時
+
+`export default { ComponentA, ComponentB, ComponentC }` のようにオブジェクトでまとめてdefault exportし、`import Components from './components'` のようにdefault importで受け取る場合は、バンドルツールがどのプロパティが使われているか静的に判断できず、未使用のものもバンドルに含まれてしまうことがあります。
+
+### 例：export defaultでまとめている場合
+
+```ts
+// components/index.ts
+import { ComponentA } from './component-a';
+import { ComponentB } from './component-b';
+import { ComponentC } from './component-c';
+
+export default { ComponentA, ComponentB, ComponentC };
+```
+
+```tsx
+// App.tsx
+import Components from './components';
+
+function App() {
+  return (
+    <>
+      <Components.ComponentA />
+      <Components.ComponentB />
+    </>
+  );
+}
+```
+
+このようにdefault exportでまとめている場合、未使用のComponentCもバンドルに含まれる可能性が高くなります。
+
+## 効かない時3: 副作用が効いている時
+
+モジュール内でグローバル変数の書き換えや、import時に何らかの処理（副作用）が発生する場合、バンドルツールは安全のためそのモジュール全体をバンドルに含めてしまいます。
 
 # 補足：`sideEffect: false`で副作用を無効化
 
-# バンドルサイズを小さくするために気をつけること
+---
+
+# バンドルサイズを小さくするのに気をつけること
+
+<!-- ## その他ツリーシェイキングが効かない場合
+
+上記以外にも、以下のようなケースではツリーシェイキングが効きません：
+
+- **CommonJS形式（CJS）で書かれている場合**
+  - `require`や`module.exports`を使ったCJS形式は静的解析が難しく、未使用部分が除去されません。
+- **動的importや動的参照**
+  - `import('./foo.js')`や`obj[funcName]()`のような動的な参照は静的解析できず、すべて含まれることがあります。
+- **バンドルツールや設定の問題**
+  - バンドルツールの設定（`sideEffects: true`や`minify: false`など）によってはツリーシェイキングが効かない場合があります。
+- **Babelなどのトランスパイル後に副作用が入る場合**
+  - Babelの設定や一部プラグインによっては、tree-shakingしにくいコードに変換されてしまうことがあります。
+
+これらの点にも注意しながら、バンドルサイズの最適化を意識しましょう。 -->
