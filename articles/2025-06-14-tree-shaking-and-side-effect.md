@@ -322,3 +322,8 @@ https://github.com/yamada-ui/yamada-ui/blob/97e70ca854e85c3dea7a5ed1c584a00e79ea
 ※主要なバンドルツール（Webpack, Vite, Rollupなど）はここで紹介した挙動にほぼ準拠していますが、細かなバージョンや設定によって例外もあるため、公式ドキュメントや実際のバンドル結果も確認しましょう。
 
 これらの点を意識することで、無駄なコードを含まない最適なバンドルを作ることができます。
+
+このリポジトリで検証ができるので、気になる方はクローンして動かしてみてください
+フォーク・プルリクエスト・スター大歓迎です！！
+
+https://github.com/illionillion/tree-shaking-learning
