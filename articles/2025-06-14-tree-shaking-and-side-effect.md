@@ -2,7 +2,7 @@
 title: "ツリーシェイキングと副作用 ツリーシェイキングが効く時と効かない時"
 emoji: "🌳"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["JavaScript", "TypeScript", "React"]
+topics: ["JavaScript", "TypeScript", "React", "Vite", "Webpack"]
 published: true
 ---
 
