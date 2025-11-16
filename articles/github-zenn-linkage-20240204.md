@@ -3,7 +3,7 @@ title: "App RouterでYamada UIのテーマをカスタムする方法"
 emoji: "😎"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["YamadaUI", "NextJS", "AppRouter", "UI", "React"]
-published: true
+published: false
 ---
 
 ドキュメントを参考にして以下のように書くとエラーになります。

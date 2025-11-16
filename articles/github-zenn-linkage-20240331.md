@@ -3,7 +3,7 @@ title: "Chakra UI使うならYamada UIを使おう"
 emoji: "😎"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["YamadaUI", "ChakraUI", "React", "TypeScript", "UI"]
-published: true
+published: false
 ---
 
 # なぜYamada UIを勧めるのか

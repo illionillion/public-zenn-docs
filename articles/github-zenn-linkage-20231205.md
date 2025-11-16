@@ -3,7 +3,7 @@ title: "初投稿！！自己紹介"
 emoji: "✨"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["GitHub"]
-published: true # 公開・非公開
+published: false # 公開・非公開
 ---
 
 # 自己紹介
